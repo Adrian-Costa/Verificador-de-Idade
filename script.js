@@ -18,30 +18,30 @@ if (nas.value.length == 0 || Number(nas.value) > anoa){
     if(gen[0].checked){
         var sexo = 'Homem'
 
-        if(idade < 16){
-            img.src = ''
-        } else if (idade < 20){
-            img.src = ''
-        } else if (idade < 65){
-            img.src = ''
+        if(idade >= 0 && idade < 16){
+            img.setAttribute('src', 'imagens/homem-c.png')
+        } else if (idade >=  16 && idade < 20){
+            img.setAttribute('src', 'imagens/homem-j.png')
+        } else if (idade >= 20 && idade < 65){
+            img.setAttribute('src', 'imagens/homem-a.png')
         } else {
-            img.src = ''
+            img.setAttribute('src', 'imagens/homem-i.png')
         }
 
     } else {
         var sexo = 'Mulher'
 
-        if(idade < 16){
-            img.src = ''
-        } else if (idade < 20){
-            img.src = ''
-        } else if (idade < 65){
-            img.src = ''
+        if(idade >= 0 && idade < 16){
+            img.setAttribute('src', 'imagens/mulher-c.png')
+        } else if (idade >=  16 && idade < 20){
+            img.setAttribute('src', 'imagens/mulher-j.png')
+        } else if (idade >= 20 && idade < 65){
+            img.setAttribute('src', 'imagens/mulher-a.png')
         } else {
-            img.src = ''
+            img.setAttribute('src', 'imagens/mulher-i.png')
         }
     }
-}
-    
-    res.innerHTML = `Detectamos ${sexo} com ${idade} anos.`
+        res.innerHTML = `Detectamos ${sexo} com ${idade} anos.`
+        res.appendChild(img)
+    }
 }
